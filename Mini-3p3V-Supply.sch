@@ -1,0 +1,224 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:Mini-3p3V-Supply-cache
+EELAYER 25 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "Mini 3.3V Supply"
+Date "2018-09-11"
+Rev "0.1.0"
+Comp "Jacob Miller"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L LM1117-3.3 U1
+U 1 1 5B98745D
+P 5600 3600
+F 0 "U1" H 5450 3725 50  0000 C CNN
+F 1 "LM1117-3.3" H 5600 3725 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD_Local:SOT-223-3_TabPin2" H 5600 3600 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm1117.pdf" H 5600 3600 50  0001 C CNN
+F 4 "IC REG LDO 3.3V 0.8A SOT223" H 5600 3600 60  0001 C CNN "Description"
+	1    5600 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 5B987557
+P 5600 4100
+F 0 "#PWR01" H 5600 3850 50  0001 C CNN
+F 1 "GND" H 5600 3950 50  0000 C CNN
+F 2 "" H 5600 4100 50  0001 C CNN
+F 3 "" H 5600 4100 50  0001 C CNN
+	1    5600 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR02
+U 1 1 5B98756D
+P 5000 3500
+F 0 "#PWR02" H 5000 3350 50  0001 C CNN
+F 1 "+5V" H 5000 3640 50  0000 C CNN
+F 2 "" H 5000 3500 50  0001 C CNN
+F 3 "" H 5000 3500 50  0001 C CNN
+	1    5000 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR03
+U 1 1 5B987583
+P 6250 3500
+F 0 "#PWR03" H 6250 3350 50  0001 C CNN
+F 1 "+3.3V" H 6250 3640 50  0000 C CNN
+F 2 "" H 6250 3500 50  0001 C CNN
+F 3 "" H 6250 3500 50  0001 C CNN
+	1    6250 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1 C1
+U 1 1 5B9875A5
+P 6100 3850
+F 0 "C1" H 6125 3950 50  0000 L CNN
+F 1 "22uF" H 6125 3750 50  0000 L CNN
+F 2 "Capacitors_Tantalum_SMD:CP_Tantalum_Case-C_EIA-6032-28_Hand" H 6100 3850 50  0001 C CNN
+F 3 "" H 6100 3850 50  0001 C CNN
+F 4 "CAP TANT 22UF 16V 10% 2413" H 6100 3850 60  0001 C CNN "Description"
+	1    6100 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 3600 6450 3600
+Wire Wire Line
+	6250 3600 6250 3500
+Wire Wire Line
+	6100 3700 6100 3600
+Connection ~ 6100 3600
+Wire Wire Line
+	4900 3600 5300 3600
+Wire Wire Line
+	5000 3600 5000 3500
+Wire Wire Line
+	5600 3900 5600 4100
+$Comp
+L GND #PWR04
+U 1 1 5B987650
+P 6100 4100
+F 0 "#PWR04" H 6100 3850 50  0001 C CNN
+F 1 "GND" H 6100 3950 50  0000 C CNN
+F 2 "" H 6100 4100 50  0001 C CNN
+F 3 "" H 6100 4100 50  0001 C CNN
+	1    6100 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 4000 6100 4100
+$Comp
+L Conn_01x01 J3
+U 1 1 5B9876E5
+P 6650 3600
+F 0 "J3" H 6650 3700 50  0000 C CNN
+F 1 "3.3V" H 6650 3500 50  0000 C CNN
+F 2 "Project_Local:SolderPad3x5" H 6650 3600 50  0001 C CNN
+F 3 "" H 6650 3600 50  0001 C CNN
+	1    6650 3600
+	1    0    0    1   
+$EndComp
+$Comp
+L Conn_01x01 J1
+U 1 1 5B987723
+P 4700 3600
+F 0 "J1" H 4700 3700 50  0000 C CNN
+F 1 "5V" H 4700 3500 50  0000 C CNN
+F 2 "Project_Local:SolderPad3x5NoDrill" H 4700 3600 50  0001 C CNN
+F 3 "" H 4700 3600 50  0001 C CNN
+	1    4700 3600
+	-1   0    0    1   
+$EndComp
+Connection ~ 5000 3600
+Connection ~ 6250 3600
+$Comp
+L Conn_01x01 J4
+U 1 1 5B9877EC
+P 6650 4050
+F 0 "J4" H 6650 4150 50  0000 C CNN
+F 1 "Gnd" H 6650 3950 50  0000 C CNN
+F 2 "Project_Local:SolderPad3x5" H 6650 4050 50  0001 C CNN
+F 3 "" H 6650 4050 50  0001 C CNN
+	1    6650 4050
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	6450 4050 6100 4050
+Connection ~ 6100 4050
+$Comp
+L Conn_01x01 J2
+U 1 1 5B987833
+P 4700 4050
+F 0 "J2" H 4700 4150 50  0000 C CNN
+F 1 "Gnd" H 4700 3950 50  0000 C CNN
+F 2 "Project_Local:SolderPad3x5NoDrill" H 4700 4050 50  0001 C CNN
+F 3 "" H 4700 4050 50  0001 C CNN
+	1    4700 4050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4900 4050 5600 4050
+Connection ~ 5600 4050
+Text Notes 6250 3900 0    60   ~ 0
+Typ 10uF tant
+$Comp
+L USB_OTG J5
+U 1 1 5B99E744
+P 5550 2350
+F 0 "J5" H 5350 2800 50  0000 L CNN
+F 1 "USB_OTG" H 5350 2700 50  0000 L CNN
+F 2 "Connectors_USB_Local:USB_Micro_B_FCI_10118192" H 5700 2300 50  0001 C CNN
+F 3 "" H 5700 2300 50  0001 C CNN
+	1    5550 2350
+	1    0    0    -1  
+$EndComp
+Text Label 5050 3600 0    60   ~ 0
+5V_IN
+Wire Wire Line
+	5850 2150 6200 2150
+Text Label 5950 2150 0    60   ~ 0
+5V_IN
+$Comp
+L GND #PWR05
+U 1 1 5B99E9DF
+P 5450 2900
+F 0 "#PWR05" H 5450 2650 50  0001 C CNN
+F 1 "GND" H 5450 2750 50  0000 C CNN
+F 2 "" H 5450 2900 50  0001 C CNN
+F 3 "" H 5450 2900 50  0001 C CNN
+	1    5450 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 2750 5450 2900
+Wire Wire Line
+	5550 2750 5550 2850
+Wire Wire Line
+	5550 2850 5450 2850
+Connection ~ 5450 2850
+NoConn ~ 5850 2350
+NoConn ~ 5850 2450
+NoConn ~ 5850 2550
+$EndSCHEMATC
