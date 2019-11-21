@@ -1,6 +1,38 @@
-EESchema Schematic File Version 4
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
 LIBS:Mini-3p3V-Supply-cache
-EELAYER 26 0
+EELAYER 25 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
@@ -15,7 +47,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L regul:LM1117-3.3 U1
+L LM1117-3.3 U1
 U 1 1 5B98745D
 P 5600 3600
 F 0 "U1" H 5450 3725 50  0000 C CNN
@@ -27,7 +59,7 @@ F 4 "IC REG LDO 3.3V 0.8A SOT223" H 5600 3600 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR01
+L GND #PWR01
 U 1 1 5B987557
 P 5600 4100
 F 0 "#PWR01" H 5600 3850 50  0001 C CNN
@@ -38,7 +70,7 @@ F 3 "" H 5600 4100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+5V #PWR02
+L +5V #PWR02
 U 1 1 5B98756D
 P 5000 3500
 F 0 "#PWR02" H 5000 3350 50  0001 C CNN
@@ -49,7 +81,7 @@ F 3 "" H 5000 3500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+3.3V #PWR03
+L +3.3V #PWR03
 U 1 1 5B987583
 P 6250 3500
 F 0 "#PWR03" H 6250 3350 50  0001 C CNN
@@ -60,7 +92,7 @@ F 3 "" H 6250 3500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP1 C1
+L CP1 C1
 U 1 1 5B9875A5
 P 6100 3850
 F 0 "C1" H 6125 3950 50  0000 L CNN
@@ -72,20 +104,20 @@ F 4 "CAP TANT 22UF 16V 10% 2413" H 6100 3850 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5900 3600 6100 3600
+	5900 3600 6450 3600
 Wire Wire Line
 	6250 3600 6250 3500
 Wire Wire Line
 	6100 3700 6100 3600
 Connection ~ 6100 3600
 Wire Wire Line
-	4900 3600 5000 3600
+	4900 3600 5300 3600
 Wire Wire Line
 	5000 3600 5000 3500
 Wire Wire Line
-	5600 3900 5600 4050
+	5600 3900 5600 4100
 $Comp
-L power:GND #PWR04
+L GND #PWR04
 U 1 1 5B987650
 P 6100 4100
 F 0 "#PWR04" H 6100 3850 50  0001 C CNN
@@ -96,9 +128,9 @@ F 3 "" H 6100 4100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6100 4000 6100 4050
+	6100 4000 6100 4100
 $Comp
-L conn:Conn_01x01 J3
+L Conn_01x01 J3
 U 1 1 5B9876E5
 P 6650 3600
 F 0 "J3" H 6650 3700 50  0000 C CNN
@@ -109,7 +141,7 @@ F 3 "" H 6650 3600 50  0001 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L conn:Conn_01x01 J1
+L Conn_01x01 J1
 U 1 1 5B987723
 P 4700 3600
 F 0 "J1" H 4700 3700 50  0000 C CNN
@@ -122,7 +154,7 @@ $EndComp
 Connection ~ 5000 3600
 Connection ~ 6250 3600
 $Comp
-L conn:Conn_01x01 J4
+L Conn_01x01 J4
 U 1 1 5B9877EC
 P 6650 4050
 F 0 "J4" H 6650 4150 50  0000 C CNN
@@ -136,7 +168,7 @@ Wire Wire Line
 	6450 4050 6100 4050
 Connection ~ 6100 4050
 $Comp
-L conn:Conn_01x01 J2
+L Conn_01x01 J2
 U 1 1 5B987833
 P 4700 4050
 F 0 "J2" H 4700 4150 50  0000 C CNN
@@ -152,7 +184,7 @@ Connection ~ 5600 4050
 Text Notes 6250 3900 0    60   ~ 0
 Typ 10uF tant
 $Comp
-L conn:USB_OTG J5
+L USB_OTG J5
 U 1 1 5B99E744
 P 5550 2350
 F 0 "J5" H 5350 2800 50  0000 L CNN
@@ -169,7 +201,7 @@ Wire Wire Line
 Text Label 5950 2150 0    60   ~ 0
 5V_IN
 $Comp
-L power:GND #PWR05
+L GND #PWR05
 U 1 1 5B99E9DF
 P 5450 2900
 F 0 "#PWR05" H 5450 2650 50  0001 C CNN
@@ -180,7 +212,7 @@ F 3 "" H 5450 2900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5450 2750 5450 2850
+	5450 2750 5450 2900
 Wire Wire Line
 	5550 2750 5550 2850
 Wire Wire Line
@@ -189,16 +221,4 @@ Connection ~ 5450 2850
 NoConn ~ 5850 2350
 NoConn ~ 5850 2450
 NoConn ~ 5850 2550
-Wire Wire Line
-	6100 3600 6250 3600
-Wire Wire Line
-	5000 3600 5300 3600
-Wire Wire Line
-	6250 3600 6450 3600
-Wire Wire Line
-	6100 4050 6100 4100
-Wire Wire Line
-	5600 4050 5600 4100
-Wire Wire Line
-	5450 2850 5450 2900
 $EndSCHEMATC
